@@ -1,14 +1,32 @@
 package com.example.myapplication;
 
-public class User{
+public abstract class User {
     //Attribute
-    String UserName;
-    String password;
+    String name;
+    String id ;
+
+    //getter method
+    public String getName(){
+        return  name;
+    }
+
+    public String getId(){
+        return id;
+    }
+
+    //setter method
+    public void setName(String newName){
+        this.name = newName;
+    }
+
+    public void setId(String newId){
+        this.id = newId;
+    }
 
     //Method
-    Void login() {
-        System.out.println(UserName);
-        System.out.println(password);
-        return null;
-    }
+    abstract public String  getSummary();
+
+    //System.out.println(name+":"+id":");
+
+
 }
