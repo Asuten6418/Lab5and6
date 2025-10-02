@@ -67,13 +67,14 @@ public class MainActivity extends AppCompatActivity {
                         //remove progressbar
                         FrontPageBar1.setVisibility(View.GONE);
                         //go to DisplayNoteAct
-                        Intent displayNoteAct = new Intent(getApplicationContext(), DisplayNoteActivity.class);
+                        Intent displayNoteAct = new Intent(getApplicationContext(), BrowseNote.class);
                         startActivity(displayNoteAct);
                     });
                 }).start();
 
             }
         });
+
 
     }
 

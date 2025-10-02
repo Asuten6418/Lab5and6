@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Date;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class addnote2 extends AppCompatActivity {
 
@@ -52,7 +55,7 @@ public class addnote2 extends AppCompatActivity {
 
 
                 //Create data in TextNote class
-                textNote note = new textNote();
+                textNote note = new textNote ();
                 note.title = stringOfTitle;
                 note.setTextContent(stringOfContent);
 
@@ -62,10 +65,14 @@ public class addnote2 extends AppCompatActivity {
                 note.setOwner(user1);
 
                 displayTime.setText(note.display());
-            }
+                NoteEntity entity = NoteMapper.toEntity(note);
+                //add data to db
+                Context context = v.getContext();
+                Executors.newSingleThreadExecutor().execute (() -> {
+                    AppDatabase.getInstance(context).noteDao().insert(entity);
+            });
+            };
         });
-
-
 
         back2 = findViewById(R.id.backButtonAddNote);
         back2.setOnClickListener(new View.OnClickListener() {
