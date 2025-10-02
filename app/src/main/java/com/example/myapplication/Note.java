@@ -34,6 +34,10 @@ public class Note {
         return null;
     }
 
+    public Object items() {
+        return null;
+    }
+
     //System.out.println(title+":"+content+"("+createdDate+")");
 
 }

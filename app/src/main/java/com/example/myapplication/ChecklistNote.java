@@ -1,13 +1,18 @@
 package com.example.myapplication;
 
+import java.util.Date;
 import java.util.List;
 
 public class ChecklistNote extends Note {
     //Attribute
-    private List<String> items;
+    public List<String> items;
+
+    public ChecklistNote(String title, Date createdDate, List<String> items) {
+        super();
+    }
 
     //getter method
-    private List<String> getItems() {
+    public List<String> getItems() {
         return items;
     }
 
