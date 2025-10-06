@@ -16,7 +16,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Date;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class addnote2 extends AppCompatActivity {

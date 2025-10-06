@@ -1,12 +1,10 @@
 package com.example.myapplication;
 
-import java.util.Date;
-
 public class textNote extends Note{
     //Attribute
     private  String textContent;
 
-    public textNote(String title, Date createdDate, String content) {
+    public textNote() {
         super();
     }
 

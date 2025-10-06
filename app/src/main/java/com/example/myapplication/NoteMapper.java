@@ -23,7 +23,7 @@ public class NoteMapper {
     // Entity -> OOP
     public static Note fromEntity(NoteEntity entity) {
         if (entity.type.equals("text")) {
-            return new textNote(entity.title, entity.createdDate, entity.content);
+            return new textNote();
         } else if (entity.type.equals("checklist")) {
             List<String> items = gson.fromJson(entity.checklistItemsJson, new TypeToken<List<String>>(){}.getType());
             return new ChecklistNote(entity.title, entity.createdDate, items);

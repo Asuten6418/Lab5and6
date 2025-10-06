@@ -1,4 +1,11 @@
 package com.example.myapplication;
 
-public class APIservice {
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+
+public interface APIservice {
+    @GET("Posts")
+    Call<List<textNote>> getTextNote();
 }
